@@ -103,6 +103,24 @@ window.addEventListener("load", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  let images = document.querySelectorAll(".gallery-item");
+  let showCount = 10;
+  
+  images.forEach((img, index) => {
+      if (index >= showCount) img.style.display = "none";
+  });
+
+  document.getElementById("loadMore").addEventListener("click", function () {
+      showCount += 10;
+      images.forEach((img, index) => {
+          if (index < showCount) img.style.display = "block";
+      });
+
+      if (showCount >= images.length) this.style.display = "none";
+  });
+});
+
 particlesJS("particles-js", {
   particles: {
     number: {
@@ -115,7 +133,7 @@ particlesJS("particles-js", {
     shape: {
       type: "image",
       image: {
-        src: "https://img.icons8.com/?size=100&id=12306&format=png&color=000000", // Aquí puedes usar cualquier imagen de corazón
+        src: "https://img.icons8.com/skeuomorphism/100/like.png", // Aquí puedes usar cualquier imagen de corazón
         width: 2,
         height: 2,
       },
@@ -144,12 +162,27 @@ particlesJS("particles-js", {
 
 const mensajes = [
     "Eres mi razón de sonreír cada día. 💖",
-    "Contigo, cada momento es especial. 🌟",
-    "Tu amor es mi mayor tesoro. 🏆",
+    "Contigo, cada momento es muy especial. 🌟",
+    "Tu amor es mi mayor tesoro. 🥰",
     "Eres mi hoy, mi mañana y mi siempre. 🌹",
-    "Gracias por hacerme tan feliz. 😊",
+    "Te amo más que ayer, pero menos que mañana. ❤️",
+    "Gracias por darme tanta felicidad. 😊",
+    "Te amo hoy, mañana y siempre. 😘",
     "Eres la mejor parte de mi día. ☀️",
     "Mi corazón late por ti. 💓",
+    "Eres mi princesita preciosa. 👑",
+    "Eres mi mujer mía y solo mía. 🫶",
+    "Gracias por alegrar mis días. ❤️",
+    "Eres mi solecito. ☀️",
+    "¿Qué pasa calabacita? 🥹",
+    "Si estás leyendo esto, quiero que sepas que eres la mujer que le devolvió el brillo a mis ojos. Gracias, gracias y gracias por ser tu, por ser especial conmigo y darme tantos momentos de alegría, juntos. Desde lo más profundo de mi corazón, mi ser y mi niño interior. Te amo. ❤️",
+    "Te amo ❤️",
+    "Tiburón, Elefante, Abeja, Mapache, Oso... 🫶 ",
+    "Gracias a ti a tu familia por lo generosos y amigables que han sido conmigo. Estoy infinitamente agradecido por haberme brindado su hogar, su comida, haberme incluído como un miembro mas de la familia y lo más importante... Por haberme brindado su confianza. 🥹❤️",
+    "Please tell me who... Who's getting all my love? (love). Who's getting all my love? Tell me who... Who's getting all my time? All of that used to be mine, oh... 🎵",
+    "Cómo te extraño, mi amor. ¿por qué será? Me falta todo en la vida si no estás. Cómo te extraño, mi amor, ¿qué debo hacer? Te extraño tanto que voy a enloquecer... Ay, amooooooooooor, divinooo! Pronto tienes que volver a mí... 🎵",
+    "¿No te cansas de alegrar mis días? 😊",
+    "Te extraño... 🫠"
 ];
 
 const mensajeTexto = document.getElementById("mensaje-texto");
